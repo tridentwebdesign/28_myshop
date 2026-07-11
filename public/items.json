@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "id": "001",
+      "name": "MacBook Air M3",
+      "image": "/images/item-dammy.webp",
+      "price": 164800,
+      "category": "ガジェット",
+      "description": "毎日使ってる相棒。軽くて持ち運びやすい。",
+      "status": "onsale"
+    },
+    {
+      "id": "002",
+      "name": "無印良品のマグカップ",
+      "image": "/images/item-dammy.webp",
+      "price": 590,
+      "category": "キッチン",
+      "description": "コーヒーもスープもこれ一つ。",
+      "status": "soldout"
+    },
+    {
+      "id": "003",
+      "name": "お気に入りのスニーカー",
+      "image": "/images/item-dammy.webp",
+      "price": 12800,
+      "category": "ファッション",
+      "description": "通学からちょっとしたお出かけまで。",
+      "status": "onsale"
+    },
+    {
+      "id": "004",
+      "name": "文庫本セット",
+      "image": "/images/item-dammy.webp",
+      "price": 2400,
+      "category": "本",
+      "description": "去年読んで良かった本たち。",
+      "status": "onsale"
+    },
+    {
+      "id": "005",
+      "name": "コーヒードリッパー",
+      "image": "/images/item-dammy.webp",
+      "price": 1800,
+      "category": "キッチン",
+      "description": "朝のルーティンに欠かせない道具。",
+      "status": "onsale"
+    }
+  ]
+}
