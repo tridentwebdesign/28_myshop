@@ -48,6 +48,20 @@ export default function ItemDetail() {
         <h2 className="item-detail__name">{item.name}</h2>
         <p className="item-detail__price">¥{item.price.toLocaleString()}</p>
         <p className="item-detail__description">{item.description}</p>
+        <dl className="item-detail__specs">
+          <div className="item-detail__spec">
+            <dt>品番</dt>
+            <dd>{item.code}</dd>
+          </div>
+          <div className="item-detail__spec">
+            <dt>カラー</dt>
+            <dd>{item.color}</dd>
+          </div>
+          <div className="item-detail__spec">
+            <dt>サイズ</dt>
+            <dd>{item.size}</dd>
+          </div>
+        </dl>
       </div>
     </div>
   );

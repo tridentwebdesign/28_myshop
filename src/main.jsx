@@ -5,7 +5,7 @@ import App from './App.jsx';
 import './index.css';
 
 // ここから一時的な投入コード（投入が終わったら削除する）
-/* import { doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc } from 'firebase/firestore';
 import { db } from './firebase.js';
 
 fetch('/items.json')
@@ -15,7 +15,7 @@ fetch('/items.json')
       await setDoc(doc(db, 'items', id), fields);
     }
     console.log(`Firestoreに${data.items.length}件を投入しました`);
-  }); */
+  });
 // ここまで
 
 ReactDOM.createRoot(document.getElementById('root')).render(
