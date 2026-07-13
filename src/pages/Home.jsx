@@ -1,21 +1,21 @@
-import { useEffect, useState } from "react";
-import ItemCard from "../components/ItemCard.jsx";
+import { useEffect, useState } from 'react';
+import ItemCard from '../components/ItemCard.jsx';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../firebase.js';
 
 const INITIAL_COUNT = 9;
 const STEP = 9;
 
-export default function Home() {
+export default function Home({ favorites, cart }) {
   const [items, setItems] = useState([]);
   const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/items.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setItems(data.items);
-        setLoading(false);
-      });
+    getDocs(collection(db, 'items')).then((snapshot) => {
+      setItems(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      setLoading(false);
+    });
   }, []);
 
   if (loading) {
@@ -31,16 +31,12 @@ export default function Home() {
       <ul className="home__list">
         {visibleItems.map((item) => (
           <li key={item.id}>
-            <ItemCard item={item} />
+            <ItemCard item={item} favorites={favorites} cart={cart} />
           </li>
         ))}
       </ul>
       {hasMore && (
-        <button
-          type="button"
-          className="home__more"
-          onClick={() => setVisibleCount((c) => c + STEP)}
-        >
+        <button type="button" className="home__more" onClick={() => setVisibleCount((c) => c + STEP)}>
           more
         </button>
       )}
